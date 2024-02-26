@@ -1,12 +1,14 @@
 archives:
   - id: archive
-    name_template: "{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}"
+    name_template: '{{ .Binary }}-{{ .Tag }}-{{ .Os }}-{{ .Arch }}'
 before:
   hooks:
     - make tfgen
 builds:
   - binary: pulumi-resource-solidserver
     dir: provider
+    env:
+      - CGO_ENABLED=0
     goarch:
       - amd64
       - arm64
@@ -14,13 +16,14 @@ builds:
       - darwin
       - windows
       - linux
-    ignore: []
     ldflags:
-      - -X github.com/AthenaWolfe/pulumi-solidserver/provider/pkg/version.Version={{.Tag}}
+      # The line below MUST align with the module in current provider/go.mod
+      - -X github.com/AthenaWolfe/pulumi-solidserver/provider/pkg/version.Version={{.Tag }}
     main: ./cmd/pulumi-resource-solidserver/
-    sort: asc
-    use: git
+changelog:
+  skip: true
 release:
   disable: false
+  prerelease: auto
 snapshot:
-  name_template: "{{ .Tag }}-SNAPSHOT"
+  name_template: '{{ .Tag }}-SNAPSHOT'
