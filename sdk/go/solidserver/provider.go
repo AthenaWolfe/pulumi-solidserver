@@ -7,7 +7,6 @@ import (
 	"context"
 	"reflect"
 
-	"errors"
 	"github.com/AthenaWolfe/pulumi-solidserver/sdk/go/solidserver/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
@@ -22,30 +21,46 @@ type Provider struct {
 	// PEM formatted file with additional certificates to trust for TLS connection
 	AdditionalTrustCertsFile pulumi.StringPtrOutput `pulumi:"additionalTrustCertsFile"`
 	// SOLIDServer Hostname or IP address
-	Host pulumi.StringOutput `pulumi:"host"`
+	Host pulumi.StringPtrOutput `pulumi:"host"`
 	// SOLIDServer API user's password
-	Password pulumi.StringOutput `pulumi:"password"`
+	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// SOLIDServer Version in case API user does not have admin permissions
 	Solidserverversion pulumi.StringPtrOutput `pulumi:"solidserverversion"`
 	// SOLIDServer API user's ID
-	Username pulumi.StringOutput `pulumi:"username"`
+	Username pulumi.StringPtrOutput `pulumi:"username"`
 }
 
 // NewProvider registers a new resource with the given unique name, arguments, and options.
 func NewProvider(ctx *pulumi.Context,
 	name string, args *ProviderArgs, opts ...pulumi.ResourceOption) (*Provider, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &ProviderArgs{}
 	}
 
 	if args.Host == nil {
-		return nil, errors.New("invalid value for required argument 'Host'")
+		if d := internal.GetEnvOrDefault(nil, nil, "SDS_HOST"); d != nil {
+			args.Host = pulumi.StringPtr(d.(string))
+		}
 	}
 	if args.Password == nil {
-		return nil, errors.New("invalid value for required argument 'Password'")
+		if d := internal.GetEnvOrDefault(nil, nil, "SDS_PASSWORD"); d != nil {
+			args.Password = pulumi.StringPtr(d.(string))
+		}
+	}
+	if args.Solidserverversion == nil {
+		if d := internal.GetEnvOrDefault(nil, nil, "SDS_SOLIDSERVERVERION"); d != nil {
+			args.Solidserverversion = pulumi.StringPtr(d.(string))
+		}
+	}
+	if args.Sslverify == nil {
+		if d := internal.GetEnvOrDefault(nil, nil, "SDS_SSLVERIFY"); d != nil {
+			args.Sslverify = pulumi.BoolPtr(d.(string))
+		}
 	}
 	if args.Username == nil {
-		return nil, errors.New("invalid value for required argument 'Username'")
+		if d := internal.GetEnvOrDefault(nil, nil, "SDS_USERNAME"); d != nil {
+			args.Username = pulumi.StringPtr(d.(string))
+		}
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Provider
@@ -60,15 +75,15 @@ type providerArgs struct {
 	// PEM formatted file with additional certificates to trust for TLS connection
 	AdditionalTrustCertsFile *string `pulumi:"additionalTrustCertsFile"`
 	// SOLIDServer Hostname or IP address
-	Host string `pulumi:"host"`
+	Host *string `pulumi:"host"`
 	// SOLIDServer API user's password
-	Password string `pulumi:"password"`
+	Password *string `pulumi:"password"`
 	// SOLIDServer Version in case API user does not have admin permissions
 	Solidserverversion *string `pulumi:"solidserverversion"`
 	// Enable/Disable ssl verify (Default : enabled)
 	Sslverify *bool `pulumi:"sslverify"`
 	// SOLIDServer API user's ID
-	Username string `pulumi:"username"`
+	Username *string `pulumi:"username"`
 }
 
 // The set of arguments for constructing a Provider resource.
@@ -76,15 +91,15 @@ type ProviderArgs struct {
 	// PEM formatted file with additional certificates to trust for TLS connection
 	AdditionalTrustCertsFile pulumi.StringPtrInput
 	// SOLIDServer Hostname or IP address
-	Host pulumi.StringInput
+	Host pulumi.StringPtrInput
 	// SOLIDServer API user's password
-	Password pulumi.StringInput
+	Password pulumi.StringPtrInput
 	// SOLIDServer Version in case API user does not have admin permissions
 	Solidserverversion pulumi.StringPtrInput
 	// Enable/Disable ssl verify (Default : enabled)
 	Sslverify pulumi.BoolPtrInput
 	// SOLIDServer API user's ID
-	Username pulumi.StringInput
+	Username pulumi.StringPtrInput
 }
 
 func (ProviderArgs) ElementType() reflect.Type {
@@ -130,13 +145,13 @@ func (o ProviderOutput) AdditionalTrustCertsFile() pulumi.StringPtrOutput {
 }
 
 // SOLIDServer Hostname or IP address
-func (o ProviderOutput) Host() pulumi.StringOutput {
-	return o.ApplyT(func(v *Provider) pulumi.StringOutput { return v.Host }).(pulumi.StringOutput)
+func (o ProviderOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Host }).(pulumi.StringPtrOutput)
 }
 
 // SOLIDServer API user's password
-func (o ProviderOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v *Provider) pulumi.StringOutput { return v.Password }).(pulumi.StringOutput)
+func (o ProviderOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
 // SOLIDServer Version in case API user does not have admin permissions
@@ -145,8 +160,8 @@ func (o ProviderOutput) Solidserverversion() pulumi.StringPtrOutput {
 }
 
 // SOLIDServer API user's ID
-func (o ProviderOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v *Provider) pulumi.StringOutput { return v.Username }).(pulumi.StringOutput)
+func (o ProviderOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Username }).(pulumi.StringPtrOutput)
 }
 
 func init() {

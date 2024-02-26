@@ -100,31 +100,31 @@ func Provider() tfbridge.ProviderInfo {
 			// 	},
 			// },
 			"host": {
-				Type: "string",
+				Type: tfbridge.MakeResource(mainPkg, mainMod, "Host"),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"SDS_HOST"},
 				},
 			},
 			"username": {
-				Type: "string",
+				Type: tfbridge.MakeResource(mainPkg, mainMod, "Username"),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"SDS_USERNAME"},
 				},
 			},
 			"password": {
-				Type: "string",
+				Type: tfbridge.MakeResource(mainPkg, mainMod, "Password"),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"SDS_PASSWORD"},
 				},
 			},
 			"solidserverversion": {
-				Type: "string",
+				Type: tfbridge.MakeResource(mainPkg, mainMod, "Solidserverversion"),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"SDS_SOLIDSERVERVERION"},
 				},
 			},
 			"sslverify": {
-				Type: "bool",
+				Type: tfbridge.MakeResource(mainPkg, mainMod, "Sslverify"),
 				Default: &tfbridge.DefaultInfo{
 					EnvVars: []string{"SDS_SSLVERIFY"},
 				},

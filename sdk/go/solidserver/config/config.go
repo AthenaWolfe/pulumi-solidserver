@@ -18,25 +18,65 @@ func GetAdditionalTrustCertsFile(ctx *pulumi.Context) string {
 
 // SOLIDServer Hostname or IP address
 func GetHost(ctx *pulumi.Context) string {
-	return config.Get(ctx, "solidserver:host")
+	v, err := config.Try(ctx, "solidserver:host")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "SDS_HOST"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 
 // SOLIDServer API user's password
 func GetPassword(ctx *pulumi.Context) string {
-	return config.Get(ctx, "solidserver:password")
+	v, err := config.Try(ctx, "solidserver:password")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "SDS_PASSWORD"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 
 // SOLIDServer Version in case API user does not have admin permissions
 func GetSolidserverversion(ctx *pulumi.Context) string {
-	return config.Get(ctx, "solidserver:solidserverversion")
+	v, err := config.Try(ctx, "solidserver:solidserverversion")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "SDS_SOLIDSERVERVERION"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 
 // Enable/Disable ssl verify (Default : enabled)
-func GetSslverify(ctx *pulumi.Context) bool {
-	return config.GetBool(ctx, "solidserver:sslverify")
+func GetSslverify(ctx *pulumi.Context) string {
+	v, err := config.Try(ctx, "solidserver:sslverify")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "SDS_SSLVERIFY"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
 
 // SOLIDServer API user's ID
 func GetUsername(ctx *pulumi.Context) string {
-	return config.Get(ctx, "solidserver:username")
+	v, err := config.Try(ctx, "solidserver:username")
+	if err == nil {
+		return v
+	}
+	var value string
+	if d := internal.GetEnvOrDefault(nil, nil, "SDS_USERNAME"); d != nil {
+		value = d.(string)
+	}
+	return value
 }
