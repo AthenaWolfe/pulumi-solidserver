@@ -90,7 +90,7 @@ func Provider() tfbridge.ProviderInfo {
 		// should match the TF provider module's require directive, not any replace directives.
 		GitHubOrg:    "EfficientIP-Labs",
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
-		Config:       map[string]*tfbridge.SchemaInfo{
+		Config: map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
 			// "region": {
@@ -99,6 +99,36 @@ func Provider() tfbridge.ProviderInfo {
 			// 		EnvVars: []string{"AWS_REGION", "AWS_DEFAULT_REGION"},
 			// 	},
 			// },
+			"host": {
+				Type: "string",
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"SDS_HOST"},
+				},
+			},
+			"username": {
+				Type: "string",
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"SDS_USERNAME"},
+				},
+			},
+			"password": {
+				Type: "string",
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"SDS_PASSWORD"},
+				},
+			},
+			"solidserverversion": {
+				Type: "string",
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"SDS_SOLIDSERVERVERION"},
+				},
+			},
+			"sslverify": {
+				Type: "bool",
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"SDS_SSLVERIFY"},
+				},
+			},
 		},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{
@@ -147,6 +177,24 @@ func Provider() tfbridge.ProviderInfo {
 			// Map each resource in the Terraform provider to a Pulumi function. An example
 			// is below.
 			// "aws_ami": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getAmi")},
+			"solidserver_cdb":              {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getCdb")},
+			"solidserver_cdb_data":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getCdbData")},
+			"solidserver_dns_server":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getDnsServer")},
+			"solidserver_dns_smart":        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getDnsSmart")},
+			"solidserver_dns_view":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getDnsView")},
+			"solidserver_dns_zone":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getDnsZone")},
+			"solidserver_ip6_address":      {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIp6Address")},
+			"solidserver_ip6_pool":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIp6Pool")},
+			"solidserver_ip6_subnet":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIp6Subnet")},
+			"solidserver_ip6_ptr":          {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIp6Ptr")},
+			"solidserver_ip6_subnet_query": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIp6SubnetQuery")},
+			"solidserver_ip_address":       {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIpAddress")},
+			"solidserver_ip_pool":          {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIpPool")},
+			"solidserver_ip_space":         {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIpSpace")},
+			"solidserver_ip_ptr":           {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIpPtr")},
+			"solidserver_ip_subnet":        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIpSubnet")},
+			"solidserver_ip_subnet_query":  {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getIpSubnetQuery")},
+			"solidserver_usergroup":        {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getUsergroup")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions
