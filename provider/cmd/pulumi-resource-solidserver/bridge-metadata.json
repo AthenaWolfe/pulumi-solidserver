@@ -1,0 +1,523 @@
+{
+    "auto-aliasing": {
+        "resources": {
+            "solidserver_app_application": {
+                "current": "solidserver:index/appApplication:AppApplication",
+                "fields": {
+                    "gslb_members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_app_node": {
+                "current": "solidserver:index/appNode:AppNode"
+            },
+            "solidserver_app_pool": {
+                "current": "solidserver:index/appPool:AppPool"
+            },
+            "solidserver_cdb": {
+                "current": "solidserver:index/cdb:Cdb"
+            },
+            "solidserver_cdb_data": {
+                "current": "solidserver:index/cdbData:CdbData"
+            },
+            "solidserver_device": {
+                "current": "solidserver:index/device:Device"
+            },
+            "solidserver_dns_forward_zone": {
+                "current": "solidserver:index/dnsForwardZone:DnsForwardZone",
+                "fields": {
+                    "forwarders": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_rr": {
+                "current": "solidserver:index/dnsRr:DnsRr"
+            },
+            "solidserver_dns_server": {
+                "current": "solidserver:index/dnsServer:DnsServer",
+                "fields": {
+                    "allow_query": {
+                        "maxItemsOne": false
+                    },
+                    "allow_recursion": {
+                        "maxItemsOne": false
+                    },
+                    "allow_transfer": {
+                        "maxItemsOne": false
+                    },
+                    "forwarders": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_smart": {
+                "current": "solidserver:index/dnsSmart:DnsSmart",
+                "fields": {
+                    "allow_query": {
+                        "maxItemsOne": false
+                    },
+                    "allow_recursion": {
+                        "maxItemsOne": false
+                    },
+                    "allow_transfer": {
+                        "maxItemsOne": false
+                    },
+                    "forwarders": {
+                        "maxItemsOne": false
+                    },
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_view": {
+                "current": "solidserver:index/dnsView:DnsView",
+                "fields": {
+                    "allow_query": {
+                        "maxItemsOne": false
+                    },
+                    "allow_recursion": {
+                        "maxItemsOne": false
+                    },
+                    "allow_transfer": {
+                        "maxItemsOne": false
+                    },
+                    "forwarders": {
+                        "maxItemsOne": false
+                    },
+                    "match_clients": {
+                        "maxItemsOne": false
+                    },
+                    "match_to": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_zone": {
+                "current": "solidserver:index/dnsZone:DnsZone",
+                "fields": {
+                    "also_notify": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_ip6_address": {
+                "current": "solidserver:index/ip6Address:Ip6Address"
+            },
+            "solidserver_ip6_alias": {
+                "current": "solidserver:index/ip6Alias:Ip6Alias"
+            },
+            "solidserver_ip6_mac": {
+                "current": "solidserver:index/ip6Mac:Ip6Mac"
+            },
+            "solidserver_ip6_pool": {
+                "current": "solidserver:index/ip6Pool:Ip6Pool"
+            },
+            "solidserver_ip6_subnet": {
+                "current": "solidserver:index/ip6Subnet:Ip6Subnet"
+            },
+            "solidserver_ip_address": {
+                "current": "solidserver:index/ipAddress:IpAddress"
+            },
+            "solidserver_ip_alias": {
+                "current": "solidserver:index/ipAlias:IpAlias"
+            },
+            "solidserver_ip_mac": {
+                "current": "solidserver:index/ipMac:IpMac"
+            },
+            "solidserver_ip_pool": {
+                "current": "solidserver:index/ipPool:IpPool"
+            },
+            "solidserver_ip_space": {
+                "current": "solidserver:index/ipSpace:IpSpace"
+            },
+            "solidserver_ip_subnet": {
+                "current": "solidserver:index/ipSubnet:IpSubnet"
+            },
+            "solidserver_user": {
+                "current": "solidserver:index/user:User",
+                "fields": {
+                    "groups": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_usergroup": {
+                "current": "solidserver:index/usergroup:Usergroup"
+            },
+            "solidserver_vlan": {
+                "current": "solidserver:index/vlan:Vlan"
+            },
+            "solidserver_vlan_domain": {
+                "current": "solidserver:index/vlanDomain:VlanDomain"
+            },
+            "solidserver_vlan_range": {
+                "current": "solidserver:index/vlanRange:VlanRange"
+            }
+        },
+        "datasources": {
+            "solidserver_cdb": {
+                "current": "solidserver:index/getCdb:getCdb"
+            },
+            "solidserver_cdb_data": {
+                "current": "solidserver:index/getCdbData:getCdbData"
+            },
+            "solidserver_dns_server": {
+                "current": "solidserver:index/getDnsServer:getDnsServer",
+                "fields": {
+                    "allow_query": {
+                        "maxItemsOne": false
+                    },
+                    "allow_recursion": {
+                        "maxItemsOne": false
+                    },
+                    "allow_transfer": {
+                        "maxItemsOne": false
+                    },
+                    "forwarders": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_smart": {
+                "current": "solidserver:index/getDnsSmart:getDnsSmart",
+                "fields": {
+                    "allow_query": {
+                        "maxItemsOne": false
+                    },
+                    "allow_recursion": {
+                        "maxItemsOne": false
+                    },
+                    "allow_transfer": {
+                        "maxItemsOne": false
+                    },
+                    "forwarders": {
+                        "maxItemsOne": false
+                    },
+                    "members": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_view": {
+                "current": "solidserver:index/getDnsView:getDnsView",
+                "fields": {
+                    "allow_query": {
+                        "maxItemsOne": false
+                    },
+                    "allow_recursion": {
+                        "maxItemsOne": false
+                    },
+                    "allow_transfer": {
+                        "maxItemsOne": false
+                    },
+                    "forwarders": {
+                        "maxItemsOne": false
+                    },
+                    "match_clients": {
+                        "maxItemsOne": false
+                    },
+                    "match_to": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "solidserver_dns_zone": {
+                "current": "solidserver:index/getDnsZone:getDnsZone"
+            },
+            "solidserver_ip6_address": {
+                "current": "solidserver:index/getIp6Address:getIp6Address"
+            },
+            "solidserver_ip6_pool": {
+                "current": "solidserver:index/getIp6Pool:getIp6Pool"
+            },
+            "solidserver_ip6_ptr": {
+                "current": "solidserver:index/getIp6Ptr:getIp6Ptr"
+            },
+            "solidserver_ip6_subnet": {
+                "current": "solidserver:index/getIp6Subnet:getIp6Subnet"
+            },
+            "solidserver_ip6_subnet_query": {
+                "current": "solidserver:index/getIp6SubnetQuery:getIp6SubnetQuery"
+            },
+            "solidserver_ip_address": {
+                "current": "solidserver:index/getIpAddress:getIpAddress"
+            },
+            "solidserver_ip_pool": {
+                "current": "solidserver:index/getIpPool:getIpPool"
+            },
+            "solidserver_ip_ptr": {
+                "current": "solidserver:index/getIpPtr:getIpPtr"
+            },
+            "solidserver_ip_space": {
+                "current": "solidserver:index/getIpSpace:getIpSpace"
+            },
+            "solidserver_ip_subnet": {
+                "current": "solidserver:index/getIpSubnet:getIpSubnet"
+            },
+            "solidserver_ip_subnet_query": {
+                "current": "solidserver:index/getIpSubnetQuery:getIpSubnetQuery"
+            },
+            "solidserver_usergroup": {
+                "current": "solidserver:index/getUsergroup:getUsergroup"
+            },
+            "solidserver_vlan": {
+                "current": "solidserver:index/getVlan:getVlan"
+            },
+            "solidserver_vlan_domain": {
+                "current": "solidserver:index/getVlanDomain:getVlanDomain"
+            },
+            "solidserver_vlan_range": {
+                "current": "solidserver:index/getVlanRange:getVlanRange"
+            }
+        }
+    },
+    "auto-settings": {},
+    "renames": {
+        "resources": {
+            "solidserver:index/appApplication:AppApplication": "solidserver_app_application",
+            "solidserver:index/appNode:AppNode": "solidserver_app_node",
+            "solidserver:index/appPool:AppPool": "solidserver_app_pool",
+            "solidserver:index/cdb:Cdb": "solidserver_cdb",
+            "solidserver:index/cdbData:CdbData": "solidserver_cdb_data",
+            "solidserver:index/device:Device": "solidserver_device",
+            "solidserver:index/dnsForwardZone:DnsForwardZone": "solidserver_dns_forward_zone",
+            "solidserver:index/dnsRr:DnsRr": "solidserver_dns_rr",
+            "solidserver:index/dnsServer:DnsServer": "solidserver_dns_server",
+            "solidserver:index/dnsSmart:DnsSmart": "solidserver_dns_smart",
+            "solidserver:index/dnsView:DnsView": "solidserver_dns_view",
+            "solidserver:index/dnsZone:DnsZone": "solidserver_dns_zone",
+            "solidserver:index/ip6Address:Ip6Address": "solidserver_ip6_address",
+            "solidserver:index/ip6Alias:Ip6Alias": "solidserver_ip6_alias",
+            "solidserver:index/ip6Mac:Ip6Mac": "solidserver_ip6_mac",
+            "solidserver:index/ip6Pool:Ip6Pool": "solidserver_ip6_pool",
+            "solidserver:index/ip6Subnet:Ip6Subnet": "solidserver_ip6_subnet",
+            "solidserver:index/ipAddress:IpAddress": "solidserver_ip_address",
+            "solidserver:index/ipAlias:IpAlias": "solidserver_ip_alias",
+            "solidserver:index/ipMac:IpMac": "solidserver_ip_mac",
+            "solidserver:index/ipPool:IpPool": "solidserver_ip_pool",
+            "solidserver:index/ipSpace:IpSpace": "solidserver_ip_space",
+            "solidserver:index/ipSubnet:IpSubnet": "solidserver_ip_subnet",
+            "solidserver:index/user:User": "solidserver_user",
+            "solidserver:index/usergroup:Usergroup": "solidserver_usergroup",
+            "solidserver:index/vlan:Vlan": "solidserver_vlan",
+            "solidserver:index/vlanDomain:VlanDomain": "solidserver_vlan_domain",
+            "solidserver:index/vlanRange:VlanRange": "solidserver_vlan_range"
+        },
+        "functions": {
+            "solidserver:index/getCdb:getCdb": "solidserver_cdb",
+            "solidserver:index/getCdbData:getCdbData": "solidserver_cdb_data",
+            "solidserver:index/getDnsServer:getDnsServer": "solidserver_dns_server",
+            "solidserver:index/getDnsSmart:getDnsSmart": "solidserver_dns_smart",
+            "solidserver:index/getDnsView:getDnsView": "solidserver_dns_view",
+            "solidserver:index/getDnsZone:getDnsZone": "solidserver_dns_zone",
+            "solidserver:index/getIp6Address:getIp6Address": "solidserver_ip6_address",
+            "solidserver:index/getIp6Pool:getIp6Pool": "solidserver_ip6_pool",
+            "solidserver:index/getIp6Ptr:getIp6Ptr": "solidserver_ip6_ptr",
+            "solidserver:index/getIp6Subnet:getIp6Subnet": "solidserver_ip6_subnet",
+            "solidserver:index/getIp6SubnetQuery:getIp6SubnetQuery": "solidserver_ip6_subnet_query",
+            "solidserver:index/getIpAddress:getIpAddress": "solidserver_ip_address",
+            "solidserver:index/getIpPool:getIpPool": "solidserver_ip_pool",
+            "solidserver:index/getIpPtr:getIpPtr": "solidserver_ip_ptr",
+            "solidserver:index/getIpSpace:getIpSpace": "solidserver_ip_space",
+            "solidserver:index/getIpSubnet:getIpSubnet": "solidserver_ip_subnet",
+            "solidserver:index/getIpSubnetQuery:getIpSubnetQuery": "solidserver_ip_subnet_query",
+            "solidserver:index/getUsergroup:getUsergroup": "solidserver_usergroup",
+            "solidserver:index/getVlan:getVlan": "solidserver_vlan",
+            "solidserver:index/getVlanDomain:getVlanDomain": "solidserver_vlan_domain",
+            "solidserver:index/getVlanRange:getVlanRange": "solidserver_vlan_range"
+        },
+        "renamedProperties": {
+            "solidserver:index/appApplication:AppApplication": {
+                "classParameters": "class_parameters",
+                "gslbMembers": "gslb_members"
+            },
+            "solidserver:index/appNode:AppNode": {
+                "failbackThreshold": "failback_threshold",
+                "failureThreshold": "failure_threshold",
+                "healthcheckFrequency": "healthcheck_frequency",
+                "healthcheckParameters": "healthcheck_parameters",
+                "healthcheckTimeout": "healthcheck_timeout"
+            },
+            "solidserver:index/appPool:AppPool": {
+                "affinitySessionDuration": "affinity_session_duration",
+                "bestActiveNodes": "best_active_nodes",
+                "ipVersion": "ip_version",
+                "lbMode": "lb_mode"
+            },
+            "solidserver:index/cdbData:CdbData": {
+                "customDb": "custom_db"
+            },
+            "solidserver:index/device:Device": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/dnsForwardZone:DnsForwardZone": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/dnsRr:DnsRr": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/dnsServer:DnsServer": {
+                "allowQueries": "allow_query",
+                "allowRecursions": "allow_recursion",
+                "allowTransfers": "allow_transfer",
+                "classParameters": "class_parameters",
+                "smartRole": "smart_role"
+            },
+            "solidserver:index/dnsSmart:DnsSmart": {
+                "allowQueries": "allow_query",
+                "allowRecursions": "allow_recursion",
+                "allowTransfers": "allow_transfer",
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/dnsView:DnsView": {
+                "allowQueries": "allow_query",
+                "allowRecursions": "allow_recursion",
+                "allowTransfers": "allow_transfer",
+                "classParameters": "class_parameters",
+                "matchClients": "match_clients",
+                "matchTos": "match_to"
+            },
+            "solidserver:index/dnsZone:DnsZone": {
+                "alsoNotifies": "also_notify",
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/getCdbData:getCdbData": {
+                "customDb": "custom_db"
+            },
+            "solidserver:index/getDnsServer:getDnsServer": {
+                "allowQueries": "allow_query",
+                "allowRecursions": "allow_recursion",
+                "allowTransfers": "allow_transfer",
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/getDnsSmart:getDnsSmart": {
+                "allowQueries": "allow_query",
+                "allowRecursions": "allow_recursion",
+                "allowTransfers": "allow_transfer",
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/getDnsView:getDnsView": {
+                "allowQueries": "allow_query",
+                "allowRecursions": "allow_recursion",
+                "allowTransfers": "allow_transfer",
+                "classParameters": "class_parameters",
+                "matchClients": "match_clients",
+                "matchTos": "match_to"
+            },
+            "solidserver:index/getDnsZone:getDnsZone": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/getIp6Address:getIp6Address": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/getIp6Pool:getIp6Pool": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/getIp6Subnet:getIp6Subnet": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size",
+                "vlanId": "vlan_id"
+            },
+            "solidserver:index/getIp6SubnetQuery:getIp6SubnetQuery": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/getIpAddress:getIpAddress": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/getIpPool:getIpPool": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/getIpSpace:getIpSpace": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/getIpSubnet:getIpSubnet": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size",
+                "vlanId": "vlan_id"
+            },
+            "solidserver:index/getIpSubnetQuery:getIpSubnetQuery": {
+                "classParameters": "class_parameters",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/getVlan:getVlan": {
+                "classParameters": "class_parameters",
+                "vlanDomain": "vlan_domain",
+                "vlanId": "vlan_id",
+                "vlanRange": "vlan_range"
+            },
+            "solidserver:index/getVlanDomain:getVlanDomain": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/getVlanRange:getVlanRange": {
+                "classParameters": "class_parameters",
+                "vlanDomain": "vlan_domain"
+            },
+            "solidserver:index/ip6Address:Ip6Address": {
+                "classParameters": "class_parameters",
+                "requestIp": "request_ip"
+            },
+            "solidserver:index/ip6Pool:Ip6Pool": {
+                "classParameters": "class_parameters",
+                "dhcpRange": "dhcp_range",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/ip6Subnet:Ip6Subnet": {
+                "classParameters": "class_parameters",
+                "gatewayOffset": "gateway_offset",
+                "prefixSize": "prefix_size",
+                "requestIp": "request_ip"
+            },
+            "solidserver:index/ipAddress:IpAddress": {
+                "classParameters": "class_parameters",
+                "requestIp": "request_ip"
+            },
+            "solidserver:index/ipPool:IpPool": {
+                "classParameters": "class_parameters",
+                "dhcpRange": "dhcp_range",
+                "prefixSize": "prefix_size"
+            },
+            "solidserver:index/ipSpace:IpSpace": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/ipSubnet:IpSubnet": {
+                "classParameters": "class_parameters",
+                "gatewayOffset": "gateway_offset",
+                "prefixSize": "prefix_size",
+                "requestIp": "request_ip"
+            },
+            "solidserver:index/user:User": {
+                "classParameters": "class_parameters",
+                "firstName": "first_name",
+                "lastName": "last_name"
+            },
+            "solidserver:index/vlan:Vlan": {
+                "classParameters": "class_parameters",
+                "requestId": "request_id",
+                "vlanDomain": "vlan_domain",
+                "vlanId": "vlan_id",
+                "vlanRange": "vlan_range"
+            },
+            "solidserver:index/vlanDomain:VlanDomain": {
+                "classParameters": "class_parameters"
+            },
+            "solidserver:index/vlanRange:VlanRange": {
+                "classParameters": "class_parameters",
+                "vlanDomain": "vlan_domain"
+            },
+            "solidserver:index:Provider": {
+                "additionalTrustCertsFile": "additional_trust_certs_file"
+            }
+        },
+        "renamedConfigProperties": {
+            "additionalTrustCertsFile": "additional_trust_certs_file"
+        }
+    }
+}
