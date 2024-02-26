@@ -49,11 +49,10 @@ dotnet add package AthenaWolfe.Solidserver
 
 The following configuration points are available for the `solidserver` provider:
 
-- `solidserver:host` (environment: `SDS_HOST`)     - SOLIDserver's URL - **required**
-- `solidserver:username` (environment: `SDS_USERNAME`) - Login Username - **required**
-- `solidserver:password` (environment: `SDS_PASSWORD`) - Login Password - **required**
-- `solidserver:solidserverversion` (environment: `SDS_SOLIDSERVERVERION`) - The version of sds we are connecting too.
-- `solidserver:sslverify` (environment: `SDS_SSLVERIFY`) -  - True/False do we need to verify the cert.
+- `solidserver:host` (environment: `SOLIDServer_HOST`)     - SOLIDserver's URL - **required**
+- `solidserver:username` (environment: `SOLIDServer_USERNAME`) - Login Username - **required**
+- `solidserver:password` (environment: `SOLIDServer_PASSWORD`) - Login Password - **required**
+- `solidserver:sslverify` (environment: `SOLIDServer_SSLVERIFY`) -  - True/False do we need to verify the cert.
 
 
 ## Reference

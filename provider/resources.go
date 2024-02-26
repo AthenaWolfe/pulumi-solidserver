@@ -90,7 +90,7 @@ func Provider() tfbridge.ProviderInfo {
 		// should match the TF provider module's require directive, not any replace directives.
 		GitHubOrg:    "EfficientIP-Labs",
 		MetadataInfo: tfbridge.NewProviderMetadata(metadata),
-		Config: map[string]*tfbridge.SchemaInfo{
+		Config:       map[string]*tfbridge.SchemaInfo{
 			// Add any required configuration here, or remove the example below if
 			// no additional points are required.
 			// "region": {
@@ -99,36 +99,36 @@ func Provider() tfbridge.ProviderInfo {
 			// 		EnvVars: []string{"AWS_REGION", "AWS_DEFAULT_REGION"},
 			// 	},
 			// },
-			"host": {
-				Type: tfbridge.MakeResource(mainPkg, mainMod, "Host"),
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"SDS_HOST"},
-				},
-			},
-			"username": {
-				Type: tfbridge.MakeResource(mainPkg, mainMod, "Username"),
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"SDS_USERNAME"},
-				},
-			},
-			"password": {
-				Type: tfbridge.MakeResource(mainPkg, mainMod, "Password"),
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"SDS_PASSWORD"},
-				},
-			},
-			"solidserverversion": {
-				Type: tfbridge.MakeResource(mainPkg, mainMod, "Solidserverversion"),
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"SDS_SOLIDSERVERVERION"},
-				},
-			},
-			"sslverify": {
-				Type: tfbridge.MakeResource(mainPkg, mainMod, "Sslverify"),
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"SDS_SSLVERIFY"},
-				},
-			},
+			//	"host": {
+			//		Type: tfbridge.MakeResource(mainPkg, mainMod, "Host"),
+			//		Default: &tfbridge.DefaultInfo{
+			//			EnvVars: []string{"SDS_HOST"},
+			//		},
+			//	},
+			//	"username": {
+			//		Type: tfbridge.MakeResource(mainPkg, mainMod, "Username"),
+			//		Default: &tfbridge.DefaultInfo{
+			//			EnvVars: []string{"SDS_USERNAME"},
+			//		},
+			//	},
+			//	"password": {
+			//		Type: tfbridge.MakeResource(mainPkg, mainMod, "Password"),
+			//		Default: &tfbridge.DefaultInfo{
+			//			EnvVars: []string{"SDS_PASSWORD"},
+			//		},
+			//	},
+			//	"solidserverversion": {
+			//		Type: tfbridge.MakeResource(mainPkg, mainMod, "Solidserverversion"),
+			//		Default: &tfbridge.DefaultInfo{
+			//			EnvVars: []string{"SDS_SOLIDSERVERVERION"},
+			//		},
+			//	},
+			//	"sslverify": {
+			//		Type: tfbridge.MakeResource(mainPkg, mainMod, "Sslverify"),
+			//		Default: &tfbridge.DefaultInfo{
+			//			EnvVars: []string{"SDS_SSLVERIFY"},
+			//		},
+			//	},
 		},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{

@@ -56,53 +56,23 @@
             },
             "host": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/host:Host",
-                "description": "SOLIDServer Hostname or IP address\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_HOST"
-                    ]
-                }
+                "description": "SOLIDServer Hostname or IP address\n"
             },
             "password": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/password:Password",
-                "description": "SOLIDServer API user's password\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_PASSWORD"
-                    ]
-                }
+                "description": "SOLIDServer API user's password\n"
             },
             "solidserverversion": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/solidserverversion:Solidserverversion",
-                "description": "SOLIDServer Version in case API user does not have admin permissions\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_SOLIDSERVERVERION"
-                    ]
-                }
+                "description": "SOLIDServer Version in case API user does not have admin permissions\n"
             },
             "sslverify": {
                 "type": "boolean",
-                "$ref": "#/types/solidserver:index/sslverify:Sslverify",
-                "description": "Enable/Disable ssl verify (Default : enabled)\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_SSLVERIFY"
-                    ]
-                }
+                "description": "Enable/Disable ssl verify (Default : enabled)\n"
             },
             "username": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/username:Username",
-                "description": "SOLIDServer API user's ID\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_USERNAME"
-                    ]
-                }
+                "description": "SOLIDServer API user's ID\n"
             }
         },
         "defaults": [
@@ -120,30 +90,30 @@
             },
             "host": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/host:Host",
                 "description": "SOLIDServer Hostname or IP address\n"
             },
             "password": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/password:Password",
                 "description": "SOLIDServer API user's password\n"
             },
             "solidserverversion": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/solidserverversion:Solidserverversion",
                 "description": "SOLIDServer Version in case API user does not have admin permissions\n"
             },
             "sslverify": {
                 "type": "boolean",
-                "$ref": "#/types/solidserver:index/sslverify:Sslverify",
                 "description": "Enable/Disable ssl verify (Default : enabled)\n"
             },
             "username": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/username:Username",
                 "description": "SOLIDServer API user's ID\n"
             }
         },
+        "required": [
+            "host",
+            "password",
+            "username"
+        ],
         "inputProperties": {
             "additionalTrustCertsFile": {
                 "type": "string",
@@ -151,55 +121,30 @@
             },
             "host": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/host:Host",
-                "description": "SOLIDServer Hostname or IP address\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_HOST"
-                    ]
-                }
+                "description": "SOLIDServer Hostname or IP address\n"
             },
             "password": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/password:Password",
-                "description": "SOLIDServer API user's password\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_PASSWORD"
-                    ]
-                }
+                "description": "SOLIDServer API user's password\n"
             },
             "solidserverversion": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/solidserverversion:Solidserverversion",
-                "description": "SOLIDServer Version in case API user does not have admin permissions\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_SOLIDSERVERVERION"
-                    ]
-                }
+                "description": "SOLIDServer Version in case API user does not have admin permissions\n"
             },
             "sslverify": {
                 "type": "boolean",
-                "$ref": "#/types/solidserver:index/sslverify:Sslverify",
-                "description": "Enable/Disable ssl verify (Default : enabled)\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_SSLVERIFY"
-                    ]
-                }
+                "description": "Enable/Disable ssl verify (Default : enabled)\n"
             },
             "username": {
                 "type": "string",
-                "$ref": "#/types/solidserver:index/username:Username",
-                "description": "SOLIDServer API user's ID\n",
-                "defaultInfo": {
-                    "environment": [
-                        "SDS_USERNAME"
-                    ]
-                }
+                "description": "SOLIDServer API user's ID\n"
             }
-        }
+        },
+        "requiredInputs": [
+            "host",
+            "password",
+            "username"
+        ]
     },
     "resources": {
         "solidserver:index/appApplication:AppApplication": {
