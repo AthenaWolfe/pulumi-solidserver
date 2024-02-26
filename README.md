@@ -1,4 +1,4 @@
-# Foo Resource Provider
+# SOLIDserver Resource Provider
 
 The SOLIDserver Resource Provider lets you manage EfficientIP's SOLIDserver.
 
