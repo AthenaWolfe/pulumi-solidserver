@@ -1,3 +1,3 @@
 module github.com/AthenaWolfe/pulumi-solidserver/sdk
 
-go 1.17
+go 1.21
